@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Whack a Mole</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+  <style>
+    body {
+      margin: 10px;
+      background-color: #d0d0d0;
+    }
+    canvas#myCanvas {
+      display: none; /* 게임 시작하면 block 으로 변경 */
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: #909090 1px solid;
+    }
+    .myAudio {
+      display: none; /* 게임 시작하면 block 으로 변경 */
+    }
+    .sound {
+      display: none; /* 게임 시작하면 block 으로 변경 */
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      width: 26px;
+      height: 24px;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .sound-on {
+      background-image: url("images/soundOn.png");
+      background-repeat: no-repeat;
+    }
+    .sound-off {
+      background-image: url("images/soundOff.png");
+      background-repeat: no-repeat;
+    }
+    div#splashScreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      width: 500px;
+      height: 400px;
+      background-image: url("images/background.png");
+      background-repeat: no-repeat;
+      border: #909090 1px solid;
+    }
+    span#mainImage {
+      display: block;
+      margin: 0 auto;
+      width: 62px;
+      height: 61px;
+      background-image: url("images/mole.png");
+      background-repeat: no-repeat;
+    }
+    span#buttonStart {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      height: 41px;
+      background-image: url("images/playbutton.png");
+      background-repeat: no-repeat;
+    }
+    span#buttonStart:hover {
+      opacity: 0.75;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="splashScreen">
+    <span id="mainImage"></span>
+    <span id="buttonStart"></span>
+  </div>
+  <div id="bgmToggle" class="sound sound-off"></div>
+  <audio loop id="bgmAudio" class="myAudio">
+    <source type="audio.mpeg" src="sounds/bg.mp3">
+  </audio>
+  <canvas id="myCanvas" width="500" height="400">
+    HTML5 Canvas 를 지원하지 않습니다.<!--HTML5 Canvas 미지원 브라우저일 때 출력-->
+  </canvas>
+  <script src="js/main.js"></script>
+</body>
+</html>
